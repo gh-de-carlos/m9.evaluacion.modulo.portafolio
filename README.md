@@ -128,7 +128,20 @@ FIRST_USER_PASSWORD=TuContraseñaSegura123!
 
 ### Paso 5: Configurar la Base de Datos
 
-La base de datos ya está creada. Para verificar:
+Crea la base de datos PostgreSQL con el nombre especificado en tu archivo `.env` (por defecto `m9_evaluacion`):
+
+```bash
+sudo -u postgres psql -c "CREATE DATABASE m9_evaluacion;"
+```
+
+Opcionalmente, puedes crear un usuario específico para la base de datos:
+
+```bash
+sudo -u postgres psql -c "CREATE USER tu_usuario WITH PASSWORD 'TuContraseñaSegura123!';"
+sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE m9_evaluacion TO tu_usuario;"
+```
+
+Para verificar que la base de datos fue creada:
 
 ```bash
 sudo -u postgres psql -c "\l" | grep m9_evaluacion
