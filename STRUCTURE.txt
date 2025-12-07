@@ -1,0 +1,44 @@
+.
+├── package.json
+├── package-lock.json
+├── prompt.md
+├── QUICK_START.md
+├── README.md
+├── src
+│   ├── controllers
+│   │   ├── authController.js
+│   │   ├── taskController.js
+│   │   └── userController.js
+│   ├── middlewares
+│   │   ├── authMiddleware.js
+│   │   └── uploadMiddleware.js
+│   ├── models
+│   │   ├── Attachment.js
+│   │   ├── index.js
+│   │   ├── Task.js
+│   │   └── User.js
+│   ├── public
+│   │   ├── css
+│   │   └── js
+│   ├── routes
+│   │   ├── authRoutes.js
+│   │   ├── pageRoutes.js
+│   │   ├── taskRoutes.js
+│   │   └── userRoutes.js
+│   ├── scripts
+│   │   ├── createInitialUser.js
+│   │   └── migrate.js
+│   ├── server.js
+│   └── views
+│       ├── dashboard.handlebars
+│       ├── error.handlebars
+│       ├── home.handlebars
+│       ├── layouts
+│       ├── login.handlebars
+│       ├── partials
+│       ├── profile.handlebars
+│       └── register.handlebars
+├── STRUCTURE.txt
+└── uploads
+
+14 directories, 28 files

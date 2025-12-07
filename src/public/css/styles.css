@@ -1,0 +1,288 @@
+:root {
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --success-color: #198754;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #0dcaf0;
+  --dark-color: #212529;
+  --light-color: #f8f9fa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.hero-section h1 {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-section p {
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-section .btn {
+  animation: fadeInUp 1.2s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Features Section */
+.features-section {
+  padding: 80px 0;
+}
+
+.feature-icon {
+  margin-bottom: 20px;
+}
+
+.features-section .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.features-section .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* CTA Section */
+.cta-section {
+  background-color: var(--light-color);
+  padding: 80px 0;
+}
+
+/* Cards */
+.card {
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Task Cards */
+.task-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-left: 4px solid var(--primary-color);
+}
+
+.task-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.task-card.priority-alta {
+  border-left-color: var(--danger-color);
+}
+
+.task-card.priority-media {
+  border-left-color: var(--warning-color);
+}
+
+.task-card.priority-baja {
+  border-left-color: var(--success-color);
+}
+
+/* Badges */
+.badge {
+  padding: 0.5em 1em;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 5px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Forms */
+.form-control, .form-select {
+  border-radius: 5px;
+  border: 1px solid #dee2e6;
+  padding: 0.75rem;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Navbar */
+.navbar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+}
+
+/* Modal */
+.modal-content {
+  border-radius: 10px;
+  border: none;
+}
+
+.modal-header {
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 10px 10px 0 0;
+}
+
+.modal-header .btn-close {
+  filter: brightness(0) invert(1);
+}
+
+/* Loading Spinner */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Alerts */
+.alert {
+  border-radius: 5px;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Avatar */
+.rounded-circle {
+  border: 3px solid white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Task attachments */
+.attachment-item {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px 15px;
+  background-color: var(--light-color);
+  border-radius: 5px;
+  border: 1px solid #dee2e6;
+}
+
+.attachment-item:hover {
+  background-color: #e9ecef;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .features-section {
+    padding: 40px 0;
+  }
+
+  .cta-section {
+    padding: 40px 0;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+
+  .card {
+    background-color: #2d2d2d;
+    color: #ffffff;
+  }
+
+  .form-control, .form-select {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    border-color: #404040;
+  }
+}
+
+/* Utility Classes */
+.text-truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.shadow-hover:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+}

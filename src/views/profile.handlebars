@@ -1,0 +1,99 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body text-center">
+          <img
+            id="avatarPreview"
+            src="{{#if user.avatar}}{{user.avatar}}{{else}}https://picsum.photos/200?random={{user.id}}{{/if}}"
+            alt="Avatar"
+            class="rounded-circle mb-3"
+            style="width: 150px; height: 150px; object-fit: cover;">
+          <h4>{{user.nombre}}</h4>
+          <p class="text-light">{{user.email}}</p>
+          <span class="badge bg-primary">{{user.rol}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" data-bs-toggle="tab" href="#profile-tab">
+                <i class="fas fa-user"></i> Perfil
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#password-tab">
+                <i class="fas fa-lock"></i> Contraseña
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <div class="tab-content">
+            <!-- Tab de Perfil -->
+            <div class="tab-pane fade show active" id="profile-tab">
+              <h5 class="card-title mb-4">Actualizar Perfil</h5>
+              <div id="profileAlertContainer"></div>
+
+              <form id="profileForm" enctype="multipart/form-data">
+                <div class="mb-3">
+                  <label for="nombre" class="form-label">Nombre Completo</label>
+                  <input type="text" class="form-control" id="nombre" name="nombre" value="{{user.nombre}}" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" value="{{user.email}}" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="avatar" class="form-label">Avatar</label>
+                  <input type="file" class="form-control" id="avatar" name="avatar" accept="image/*">
+                  <div class="form-text">Selecciona una nueva imagen de avatar (opcional)</div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                  <i class="fas fa-save"></i> Guardar Cambios
+                </button>
+              </form>
+            </div>
+
+            <!-- Tab de Contraseña -->
+            <div class="tab-pane fade" id="password-tab">
+              <h5 class="card-title mb-4">Cambiar Contraseña</h5>
+              <div id="passwordAlertContainer"></div>
+
+              <form id="passwordForm">
+                <div class="mb-3">
+                  <label for="currentPassword" class="form-label">Contraseña Actual</label>
+                  <input type="password" class="form-control" id="currentPassword" name="currentPassword" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="newPassword" class="form-label">Nueva Contraseña</label>
+                  <input type="password" class="form-control" id="newPassword" name="newPassword" required minlength="6">
+                  <div class="form-text">Mínimo 6 caracteres</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="confirmNewPassword" class="form-label">Confirmar Nueva Contraseña</label>
+                  <input type="password" class="form-control" id="confirmNewPassword" name="confirmNewPassword" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                  <i class="fas fa-key"></i> Cambiar Contraseña
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/profile.js"></script>
